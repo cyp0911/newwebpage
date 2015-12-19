@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="personal website">
+    <meta name="author" content="Yinpeng Chen">
+
+    <title>Yinpeng Chen Website</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+	<!-- Font Awesome -->
+	<link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	
+    <!-- Global CSS -->
+	<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">   
+	
+    <!-- Plugins CSS -->
+	<link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.css">
+    
+    
+    
+    <!-- Animation -->
+	<link href="css/animate.css" rel="stylesheet" />
+	
+    <!-- MyTemplate CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <!-- Google Map-->
+    <script
+		src="http://maps.googleapis.com/maps/api/js">
+	</script>
+    
+    <script>
+			var myCenter = new google.maps.LatLng(45.087733, -64.365527);
+
+		function initialize() {
+		var mapProp = {
+		center:myCenter,
+		zoom:12,
+		scrollwheel:true,
+		draggable:true,
+		mapTypeId:google.maps.MapTypeId.ROADMAP
+		};
+		  
+		var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+		  
+		var marker=new google.maps.Marker({
+		position:myCenter,
+		animation:google.maps.Animation.BOUNCE
+  		});
+
+		marker.setMap(map);
+
+		var infowindow = new google.maps.InfoWindow({
+  			content:"<b>Acadia University <br> I'm living here now!</b>"
+  		});
+
+		google.maps.event.addListener(marker, 'click', function() {
+  			infowindow.open(map,marker);
+  		});
+		}
+		
+		google.maps.event.addDomListener(window, 'load', initialize);
+
+		
+  <!-- Jump to the top-->
+			$(document).ready(function(){
+			  // Initialize Tooltip
+			  $('[data-toggle="tooltip"]').tooltip(); 
+			  
+			  // Add smooth scrolling to all links in navbar + footer link
+			  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+			
+				// Prevent default anchor click behavior
+				event.preventDefault();
+			
+				// Store hash
+				var hash = this.hash;
+			
+				// Using jQuery's animate() method to add smooth page scroll
+				// The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+				$('html, body').animate({
+				  scrollTop: $(hash).offset().top
+				}, 900, function(){
+			   
+				  // Add hash (#) to URL when done scrolling (default click behavior)
+				  window.location.hash = hash;
+				});
+			  });
+			})
+		
+				$(window).scroll(function() {
+		  		$(".slideanim").each(function(){
+					var pos = $(this).offset().top;
+		
+					var winTop = $(window).scrollTop();
+				if (pos < winTop + 600) {
+			  	$(this).addClass("slide");
+			}
+		  });
+		});
+
+</script>
+	
+</head>
+
+<body>
+
+	<header id="header-banner">
+		<nav class="navbar navbar-default navbar-fixed-top fadeIn" role="navigation">
+			<div class="container">
+				
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#dropdown-box-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<div class="navbar-brand">
+						<a href="#">陈音澎</a>
+					</div>
+				</div>
+				
+				<!-- Collect the nav links and other content for toggling -->
+				<div class="collapse navbar-collapse navbar-right" id="dropdown-box-1">
+					
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#home">HOME</a></li>
+						<li><a href="#aboutus">ABOUT</a></li>
+						<li class="dropdown" role="presentation">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+							  SERVICES <span class="caret"></span>
+							</a>
+							<ul class="dropdown-menu bullet fadeIn" role="menu">
+							  <li><a href="#first">FACILIS EXPEDITA</a></li>
+							  <li><a href="#second">FACILIS EXPEDITA</a></li>
+							  <li><a href="#third">FACILIS EXPEDITA</a></li>
+							</ul>
+						</li>
+						<li><a href="#testimonials">TESTIMONIALS</a></li>
+						<li><a href="#contactus">CONTACT</a></li>
+					</ul>
+					
+				</div>
+				
+			</div> <!-- /.container -->
+		</nav> <!-- /.nav -->
+	</header>
+		
+	<!-- banner -->
+    <section class="banner" id="home">
+		<div class="container">
+			<div class="slogan">
+				<h2>Clark, Yinpeng Chen, Personal Website</h2>
+				<h4>Learner, thinker and doer!</h4>
+			</div>
+			
+			<div class="btn-circle-scroll fadeIn">
+				<a href="#aboutus" class="btn-circle">
+					<i class="fa fa-angle-double-down animated"></i>
+				</a>
+			</div>
+			
+		</div>
+    </section>
+	<!-- /.banner -->
+
+	<!-- aboutus -->
+    <section class="aboutus" id="aboutus">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="wow bounceInLeft" data-wow-delay="0.1s"> 
+						<h2>About Me</h2> 
+					</div>
+					<div class="col-sm-7">
+						<p>
+							I am currently studying at Acadia Unviersity, Canada. I am majoring in Computer Science and I have completed all courses. I am working on my master thesis on topic of EEG(electroencephalo-graph) data compression. Hopefully, <b>I will graduate before May, 2016.</b></p> 
+                       <p>Since I came Canada 2 years ago, I am really enjoy the life here. I would like to have an opptunity to work and live here and I won't consider the specific location.
+						</p>
+						<p>
+							I love travel, watching sports game and playing chess. Also, I spent most of my spare time to read coding books and surf on some technique Website. I am a newbee for career, but I wont be that too long. Everyweek, I always select one or two hockeygames or A.M football games to watch. 
+						</p>
+					</div>
+					<div class="col-sm-5">
+						<div class="img-aboutus">
+							<div class="wow fadeIn" data-wow-delay="0.2s">
+								<img src="img/usacadia.gif" alt="acadiapark" class="img-responsive img-rounded" />
+							</div>
+						</div>
+					</div>
+				</div>				
+			</div>
+		</div>
+	</section>
+	<!-- /.aboutus -->
+	
+	<!-- services -->
+    <section class="services" id="services">
+		<div class="container">
+			
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="wow bounceInLeft" data-wow-delay="0.1s">
+					<h2>My works</h2>
+					</div>
+				</div>				
+			</div>
+			
+			<div class="row-padded" id="first"></div>
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="col-sm-7">
+						<h4>Master Thesis</h4>
+						<p>
+							EEG is the abbreviation of electroencephalography, which is a monitoring scheme for the recording of brain waves. With the multiple electrodes placed on the scalp, EEG data measures the change of voltage fluctuation and detecting the brain neurons electric current flow. Some diagnostic applications and devices invented by the principle of EEG signals, which helped doctors or scientists could observe the signals by vision.
+						</p>
+                        <br>
+						<p>
+							With the rise of the Wearable medical idea. People start to research the EEG signals, which is the abbreviation of the electroencephalograph. However, during its multiple electrodes and complex signal waves, EEG equipment always generate huge amount of datas. Therefore, scientists are consider how to transmit this magnitudes of data from internet and computer. Data compression is an inevitable problem during the whole information spreading process. In this paper, we are try to discover the performance of audio compression techniques to compress the EEG data. In the first stage, we test the difference between audio compression techniques and the other lossless techniques. In the second stage, audio compression method, especially FLAC (Free Lossless Audio Dodec) tools are implemented several times in my experiments and some results relate to the parameters of FLAC has been founded.
+						<!--	<a href="" />Read More...</a> -->
+						</p>
+					</div>
+					
+					<div class="col-sm-5">
+						<div class="avatar">
+							<div class="wow fadeIn" data-wow-delay="0.2s">
+							<img src="img/eegglove.gif" alt="" class="img-responsive img-rounded" />
+							</div>
+						</div>
+					</div>
+				</div>				
+			</div>
+			
+			<div class="row-padded" id="second"></div>
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="col-sm-7">
+						<h4>Facilis Expedita</h4>
+						<p>
+							Donec eu elit eget ante accumsan sollicitudin sed id nibh. Suspendisse nisl tellus, imperdiet a gravida id, bibendum a sem.
+							Donec eu elit eget ante accumsan sollicitudin sed id nibh. Suspendisse nisl tellus, imperdiet a gravida id, bibendum a sem.
+							Donec eu elit eget ante accumsan sollicitudin sed id nibh. Suspendisse nisl tellus, imperdiet a gravida id, bibendum a sem.
+							Donec eu elit eget ante accumsan sollicitudin sed id nibh. Suspendisse nisl tellus, imperdiet a gravida id, bibendum a sem.
+						</p>
+						<p>
+							Donec eu elit eget ante accumsan sollicitudin sed id nibh. Suspendisse nisl tellus, imperdiet a gravida id, bibendum a sem.
+							Donec eu elit eget ante accumsan sollicitudin sed id nibh. Suspendisse nisl tellus, imperdiet a gravida id, bibendum a sem.
+							Donec eu elit eget ante accumsan sollicitudin sed id nibh. Suspendisse nisl tellus, imperdiet a gravida id, bibendum a sem.
+							<a href="#">Read More...</a>
+						</p>
+					</div>
+					
+					<div class="col-sm-5">
+						<div class="avatar">
+							<div class="wow fadeIn" data-wow-delay="0.2s">
+							<img src="img/services/2.jpg" alt="" class="img-responsive img-rounded" />
+							</div>
+						</div>
+					</div>
+				</div>				
+			</div>
+			
+			<div class="row-padded" id="third"></div>
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="col-sm-7">
+						<h4>Facilis Expedita</h4>
+						<p>
+							Donec eu elit eget ante accumsan sollicitudin sed id nibh. Suspendisse nisl tellus, imperdiet a gravida id, bibendum a sem.
+							Donec eu elit eget ante accumsan sollicitudin sed id nibh. Suspendisse nisl tellus, imperdiet a gravida id, bibendum a sem.
+							Donec eu elit eget ante accumsan sollicitudin sed id nibh. Suspendisse nisl tellus, imperdiet a gravida id, bibendum a sem.
+							Donec eu elit eget ante accumsan sollicitudin sed id nibh. Suspendisse nisl tellus, imperdiet a gravida id, bibendum a sem.
+						</p>
+						<p>
+							Donec eu elit eget ante accumsan sollicitudin sed id nibh. Suspendisse nisl tellus, imperdiet a gravida id, bibendum a sem.
+							Donec eu elit eget ante accumsan sollicitudin sed id nibh. Suspendisse nisl tellus, imperdiet a gravida id, bibendum a sem.
+							Donec eu elit eget ante accumsan sollicitudin sed id nibh. Suspendisse nisl tellus, imperdiet a gravida id, bibendum a sem.
+							<a href="#">Read More...</a>
+						</p>
+					</div>
+					
+					<div class="col-sm-5">
+						<div class="avatar">
+							<div class="wow fadeIn" data-wow-delay="0.2s">
+							<img src="img/services/3.jpg" alt="" class="img-responsive img-rounded" />
+							</div>
+						</div>
+					</div>
+				</div>				
+			</div>
+		
+		</div>
+	</section>
+	<!-- /.services -->
+	
+	<section class="testimonials-banner" id="testimonials"></section>
+	
+	<!-- testimonials -->
+    <section class="testimonials">
+		<div class="container">
+			
+			<!-- row -->
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">					
+					<div class="col-sm-9">
+						<blockquote>
+							<p>
+								"Repudiandae autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae
+								Repudiandae autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae".
+							</p>
+							<footer class="blockquote-footer">
+								<strong>Mark Flix,</strong> <cite title="Source Title">Visitor B1 Visa (USA), Granted on 11 Feb 2015.</cite>
+							</footer>
+						</blockquote>
+					</div>
+					<div class="col-sm-3">
+						<div class="avatar">
+							<img src="img/testimonials/tt.jpg" class="img-responsive img-rounded" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- ./row -->
+			
+			<!-- row -->
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">					
+					<div class="col-sm-9">
+						<blockquote>
+							<p>
+								"Repudiandae autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae
+								Repudiandae autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae".
+							</p>
+							<footer class="blockquote-footer">
+								<strong>Mark Flix,</strong> <cite title="Source Title">Visitor B1 Visa (USA), Granted on 11 Feb 2015.</cite>
+							</footer>
+						</blockquote>
+					</div>
+					<div class="col-sm-3">
+						<div class="avatar">
+							<img src="img/testimonials/tt.jpg" class="img-responsive img-rounded" />
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- ./row -->
+			
+		</div>
+	</section>
+	<!-- /.testimonials -->
+	
+	<!-- contact us -->
+	<section class="contactus" id="contactus">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<div class="wow bounceInLeft" data-wow-delay="0.1s">
+					<h2>Get in touch</h2>
+					</div>
+					<div class="col-sm-8">
+						<form class="my-form" role="form">
+						  <div class="form-group">
+							<input type="text" class="form-control" id="name" placeholder="Name">
+						  </div>
+						  <div class="form-group">
+							<input type="email" class="form-control" id="email" placeholder="Email">
+						  </div>
+						  <div class="form-group">
+							<textarea class="form-control" name="message" id="message" rows="7" cols="25" style="resize:none;" required placeholder="Message"></textarea>
+						  </div>
+						  
+						  <button type="submit" class="btn btn-default btn-block">SEND MESSAGE</button>
+						</form>
+					</div>
+					
+					<div class="col-sm-4">
+						<div class="physical-address">
+						<h4>Personal Information</h4>
+				
+						<address>
+						  <p><strong>Contact me and I'll get back to you within 24 hours.</strong></p><br>
+						<p><span class="glyphicon glyphicon-map-marker"></span> 10 Summer St, Po Box 2638, Wolfville, Ns, Canada</p>
+
+      <p><span class="glyphicon glyphicon-phone"></span> +1 902-300-8932</p>
+
+      <p><span class="glyphicon glyphicon-envelope"></span> <a href="mailto:cyp0911@gmail.com?Subject=Hello%20there%20From%20yinpeng%20website">cyp0911@gmail.com</a></p>	
+						</address>
+                        
+						<address>
+						  <strong>I'm also on social networks</strong><br>
+							<div class="wow fadeIn" data-wow-delay="0.1s">
+							<ul class="company-social">
+								<li class="social-facebook"><a href="https://www.facebook.com/yinpeng.chen.7" target="_blank" title="facebook"><i class="fa fa-facebook"></i></a></li>
+                                <li class="social-google"><a href="https://github.com/cyp0911" target="_blank" title="Github"><i class="fa fa-github"></i></a></li>
+							
+								<li class="social-dribble"><a href="https://www.linkedin.com/profile/view?id=AAMAABdewEoB5YeAROYt-R2q6SvSedGc7VXG6ys&trk=hp-identity-photo" target="_blank" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+								
+                                <li class="social-twitter"><a href="http://weibo.com/2017302287/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank" title="Weibo"><i class="fa fa-weibo"></i></a></li>
+                                
+                                <li class="social-google"><a href="tencent://message/?uin=122766288&Site=&Menu=yes" target="_blank" title="QQ"><i class="fa fa-qq"></i></a></li>
+                                
+							</ul>
+							</div>
+						</address>	
+						</div>
+					</div>
+				</div>				
+			</div>
+		</div>
+	</section>
+	<!-- /.contact us -->
+    
+	
+	<!-- footer -->
+	<footer id="section-footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-lg-12">
+					<div class="wow fadeIn" data-wow-delay="0.4s">
+						<div class="btn-circle-scroll">
+							<a href="#header-banner" class="btn-circle">
+								<i class="fa fa-angle-double-up animated"></i>
+							</a>
+						</div>
+					</div>
+					<p>&copy;&nbspCopyright 2015 - Yinpeng Chen. All rights reserved.</p>
+				</div>
+			</div>	
+		</div>
+	</footer>
+	<!-- /.footer -->
+	
+	
+	<!-- Core JavaScript Files -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.easing.min.js"></script>	
+	<script src="js/jquery.scrollTo.js"></script>
+	<script src="js/wow.min.js"></script>			<!-- Reveal animation when you scroll by wow.js. It need animate.css library -->
+	<!-- Custom Theme JavaScript -->
+	<script src="js/custom.js"></script>
+
+</body>
+
+</html>
